@@ -1,5 +1,5 @@
 # Shara Orders Web App
-> A Sample App for Shara orders By Flanagan Khumbula
+> A Vue.js Web App + Bootstrap for Shara orders By Flanagan Khumbula
 
 
 ## Project setup

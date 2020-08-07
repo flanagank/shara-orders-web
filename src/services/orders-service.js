@@ -7,7 +7,7 @@ export default class OrdersService {
 
 
         var httpDeferred = axios({
-            url: "http://192.168.43.254:3333/orders",
+            url: localStorage.getItem("API_URL") + "/orders",
             method: "POST",
             headers: { "Content-Type": "application/json" },
             data: JSON.stringify(new_order)
@@ -22,7 +22,7 @@ export default class OrdersService {
     submitOrderDetails(order_details) {
 
         var httpDeferred = axios({
-            url: "http://192.168.43.254:3333/orderdetails",
+            url: localStorage.getItem("API_URL") + "/orderdetails",
             method: "POST",
             headers: { "Content-Type": "application/json" },
             data: JSON.stringify(order_details)

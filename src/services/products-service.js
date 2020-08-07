@@ -8,7 +8,7 @@ export default class ProductsService {
 
         var httpDeferred = axios({
             method: "GET",
-            "url": "http://192.168.43.254:3333/products",
+            "url": localStorage.getItem("API_URL") + "/products",
             headers: { "Content-Type": "application/json" }
         });
 

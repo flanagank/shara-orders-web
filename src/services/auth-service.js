@@ -11,7 +11,7 @@ export default class AuthService {
         console.log(user.email)
         var httpDeferred = axios({
             method: "POST",
-            "url": "http://192.168.43.254:3333/login",
+            "url": localStorage.getItem("API_URL") + "/login",
             headers: { "Content-Type": "application/json" },
             data: JSON.stringify({
                 email: user.email,
@@ -33,10 +33,10 @@ export default class AuthService {
     register(new_user) {
 
         var httpDeferred = axios({
-            url: "/register",
+            url: localStorage.getItem("API_URL") + "/register",
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            content: JSON.stringify({
+            data: JSON.stringify({
                 username: new_user.email,
                 email: new_user.email,
                 mobile_number: new_user.mobile_number,

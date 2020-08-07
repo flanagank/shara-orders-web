@@ -54,6 +54,7 @@ const authService = new AuthService();
         },
         methods: {
             login() {
+                
                 if(this.input.username != "" && this.input.password != "") {
                 this.user.email = this.input.username
                 this.user.password = this.input.password
@@ -66,18 +67,22 @@ const authService = new AuthService();
                         console.log(result)
          
                         //add response codes
-                        if(result.token.length > 10){
+                        
+                        // eslint-disable-next-line no-prototype-builtins
+                        if(result.hasOwnProperty('token')){
                            
                             this.processing = false;
                             localStorage.setItem("user", JSON.stringify(result));
                                  this.$emit("authenticated", true);
                                  this.$router.replace({ name: "main" });
+
+                        // eslint-disable-next-line no-prototype-builtins
+                        }else if(result.hasOwnProperty('message')){
+
+                            alert(result.message)
+
                         }else{
-
-                            alert(
-                                "Login failed! Invalid login details" 
-                            );
-
+                            alert('Could not login')
                         }
                   
                     })

@@ -11,12 +11,10 @@ import '@fortawesome/fontawesome-free/js/all.js'
 
 Vue.config.productionTip = false
 
-const authService = new AuthService();
+const authService = new AuthService(); //useless here, web app
 Vue.prototype.$authService = authService;
 
-
-// const productsService = new ProductsService();
-// Vue.prototype.$productsService = productsService;
+localStorage.setItem("API_URL", "https://shara-orders-backend.herokuapp.com");
 
 new Vue({
     router,
